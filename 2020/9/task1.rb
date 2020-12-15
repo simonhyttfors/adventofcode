@@ -1,9 +1,9 @@
 stream = File.readlines('stream').map &:to_i
 
-def find_off_number(stream, preamble_size = 25, last_valid = 0)
+def find_off_number(stream, preamble_size = 25)
   return nil if stream.size < preamble_size
   return stream[preamble_size] unless possible_sums(stream[0..preamble_size-1]).include? stream[preamble_size]
-  return find_off_number stream[1..-1], preamble_size, stream[preamble_size]
+  return find_off_number stream[1..-1], preamble_size
 end
 
 def possible_sums(array)
