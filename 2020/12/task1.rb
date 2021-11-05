@@ -9,7 +9,7 @@ def add_distances(instructions, facing = 1, coords = [0, 0])
   else
     delta = parse_instruction instr, value, facing 
   end
-  return add_distances instructions[1..-1], facing, [coords, delta].transpose.map(&:sum)
+  add_distances instructions[1..-1], facing, [coords, delta].transpose.map(&:sum)
 end
 
 def parse_instruction(instr, value, facing)
