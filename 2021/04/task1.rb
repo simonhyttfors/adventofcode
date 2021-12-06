@@ -6,8 +6,6 @@ def find_bingo
   @numbers.each.with_index do |number, i|
     @boards.each.with_index do |board, j|
       board.each.with_index do |row, k|
-        found = false
-
         row.each.with_index do |num, l|
           @boards[j][k][l] = nil if num == number
           
